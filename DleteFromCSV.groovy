@@ -4,10 +4,10 @@ import groovy.csv.CsvParser
 def pattern = "John"
 
 // Define the path to the CSV file
-def filePath = "/path/to/file.csv"
+def filePath = "D:\SWAPNIL\file.csv"
 
 // Define the path to the output file
-def outputFile = "/path/to/output.csv"
+def outputFile = "D:\SWAPNIL\output.csv"
 
 // Open the input CSV file and create the output CSV file
 def inputCsv = new File(filePath).newReader()
