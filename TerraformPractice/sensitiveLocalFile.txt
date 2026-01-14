@@ -1,0 +1,17 @@
+this will create a file but after terraform plan and terraform apply command it will display the file content
+
+resource "local_file" "games" {
+  filename     = "/root/favorite-games"
+  content  = "sensitive FIFA 21"
+
+}
+
+this will create a file but after terraform plan and terraform apply command it will NOT display the file content
+
+resource "local_sensitive_file" "games" {
+  filename     = "/root/favorite-games"
+  content  = "sensitive FIFA 21"
+
+}
+
+Notice that the content of the file was not displayed when using local_sensitive_file instead of the local_file resource.
