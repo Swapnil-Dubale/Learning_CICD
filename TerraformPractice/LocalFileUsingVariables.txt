@@ -1,0 +1,28 @@
+variable "filePath"{
+  description="a path to create local file"
+  type=string
+  default="/root/favourite-games"
+}
+variable "firstFileContent"{
+  description = "this should be written to first file"
+  type = string
+  default = "I am First File Content"
+}
+variable "secondFilePath"{
+  description = "Path for second File"
+  type=string
+  default = "/root/secondFile/favouriteGames"
+}
+variable "secondFileContent"{
+  description = "content for second file"
+  type = string
+  default = "This content is for second File"
+}
+resource "local_sensitive_file" "games" {
+  filename     = var.filePath
+  content  = var.firstFileContent
+}
+resource "local_file" "oneGame"{
+  filename = var.secondFilePath
+  content = var.secondFileContent
+}
